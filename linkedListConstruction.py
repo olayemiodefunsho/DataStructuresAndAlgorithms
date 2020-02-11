@@ -24,5 +24,8 @@ class DoublyLinkedList:
     def remove(self, node):
         pass
 
-    def containsNodesWithValue(self, node):
-        pass
+    def containsNodesWithValue(self, value):
+        node = self.head
+        while node is not None and node.value != value:
+            node = node.next
+        return node is not None
