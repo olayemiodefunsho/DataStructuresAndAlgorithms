@@ -18,7 +18,7 @@ class DoublyLinkedList:
     def insertAtPosition(self, node, nodeToInsert):
         pass
 
-    def removeNodesWithValue(self, node):
+    def removeNodesWithValue(self, value):
         node = self.head
         while node is not None:
             nodeToRemove = node
