@@ -44,8 +44,19 @@ class DoublyLinkedList:
         node.next = nodeToInsert
 
 
-    def insertAtPosition(self, node, nodeToInsert):
-        pass
+    def insertAtPosition(self, position, nodeToInsert):
+        if position == 1:
+            self.setHead(nodeToInsert)
+            return
+        node = self.head
+        currentposition = 1
+        while node is not None and currentposition != position:
+            node = node.next
+            currentposition += 1
+        if node is not None:
+            self.insertBefore(node, nodeToInsert)
+        else:
+            self.setTail(nodeToInsert)
 
     def removeNodesWithValue(self, value):
         node = self.head
