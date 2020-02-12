@@ -13,7 +13,18 @@ class DoublyLinkedList:
         pass
 
     def insertAfter(self, node, nodeToInsert):
-        pass
+        if nodeToInsert == self.head and nodeToInsert == self.tail:
+            return
+        
+        self.remove(nodeToInsert)
+        nodeToInsert.prev = node.prev
+        nodeToInsert.next = node
+        if node.prev is None:
+            self.head = nodeToInsert
+        else:
+            nodeToInsert.prev.next = nodeToInsert
+        node.prev = nodeToInsert
+
 
     def insertAtPosition(self, node, nodeToInsert):
         pass
