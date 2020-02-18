@@ -6,8 +6,14 @@
 #     return string == reversedString
 
 # O(n) time | O(n) space
-def isPalindrome(string):
-    reversedChars = []
-    for i in reversed(range(len(string))):
-        reversedChars.append(string[i]) 
-    return string == "".join(string[i])
+# def isPalindrome(string):
+#     reversedChars = []
+#     for i in reversed(range(len(string))):
+#         reversedChars.append(string[i]) 
+#     return string == "".join(string[i])
+
+# O(n) time | O(n) space
+def isPalindrome(string, i = 0):
+    j = len(string) - 1 - i
+    return True if i >= j else string[i] == string[j] and isPalindrome(string, i + 1)
+     
