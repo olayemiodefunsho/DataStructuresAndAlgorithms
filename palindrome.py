@@ -1,6 +1,13 @@
 # O(n^2) time | O(n) space
+# def isPalindrome(string):
+#     reversedString = ""
+#     for i in reversed(range(len(string))):
+#         reversedString += string[i]
+#     return string == reversedString
+
+# O(n) time | O(n) space
 def isPalindrome(string):
-    reversedString = ""
+    reversedChars = []
     for i in reversed(range(len(string))):
-        reversedString += string[i]
-    return string == reversedString
+        reversedChars.append(string[i]) 
+    return string == "".join(string[i])
