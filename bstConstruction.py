@@ -22,3 +22,28 @@ class BST:
                 else:
                     currentNode = currentNode.right
         return self
+    
+    #Average: O(log(n)) time | O(1) space
+    #Worst: O(n) time | O(1) space
+    def contains(self, value):
+        currentNode = self
+        while currentNode is not None:
+            if value < currentNode.value:
+                currentNode = currentNode.left
+            elif value > currentNode.value:
+                currentNode = currentNode.right
+            else:
+                return True
+        return False
+    
+    def remove(self, value, parentNode = None):
+        currentNode = self
+        while currentNode is not None:
+            if value < currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.left
+            elif value > currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.right
+            else:
+                pass
